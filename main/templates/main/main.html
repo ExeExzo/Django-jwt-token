@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '\main\css\style.css' %}">
+  </head>
+  <body>
+    <header class="d-flex justify-content-center py-3 heade">
+        <svg class="bi me-2" width="80" height="32"><use xlink:href="#bootstrap"></use></svg>
+
+        <a  class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <p class="text-warning" >Authorization</p>
+          </a>
+
+
+          <a href="/main" class="bar">Главная</a>
+          <span class="bar">Имя: {{request.user}}</span>
+          <span class="bar"><a href="{% url 'logout' %}" class="bar">Выйти</a></span>
+
+
+        <svg class="bi me-2" width="80" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </header>
+      <div class="container">
+        <h1 class="zagol">Welcome to My Website</h1>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Staff status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.is_staff}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+          </table>
+      </div>
+    
+	<script src="index.js"></script>
+  </body>
+</html>
