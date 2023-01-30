@@ -1,6 +1,6 @@
 # DJango-jwt-token
   ### Users
-Login: ```Admin, password: ```admin12345 ```
+Login: ```Admin```, password: ```admin12345 ```
 Login: ```user1, user2,``` password: ```person12345``` (same for two)
   ### Links
 ```
