@@ -12,5 +12,6 @@ token_obtain_pair: 'api/token/'
 ```
 token_refresh: 'api/token/refresh/'
 ```
+```
 token_verify: 'api/token/verify/'
 ```
